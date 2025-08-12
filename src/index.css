@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark mode support */
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+  
+  .dark {
+    color-scheme: dark;
+  }
+}
+
 /* Custom scrollbar */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -40,6 +51,22 @@
   -webkit-line-clamp: 3;
 }
 
+/* Slide in animation for notifications */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
 /* Smooth transitions */
 * {
   transition: all 0.2s ease;
@@ -66,4 +93,16 @@ select:focus {
 /* SEO meta tags will be handled by React Helmet in production */
 head {
   /* Ensure proper meta tags are set */
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -4,6 +4,8 @@ import { Calendar, User, Eye, Share2, Facebook, MessageCircle } from 'lucide-rea
 import { FaWhatsapp, FaTwitter } from 'react-icons/fa';
 import { articles } from '../data/mockData';
 import ArticleCard from '../components/ArticleCard';
+import CommentSection from '../components/CommentSection';
+import AdBanner from '../components/AdBanner';
 
 const ArticleDetail = () => {
   const { id } = useParams();
@@ -125,18 +127,26 @@ const ArticleDetail = () => {
           <div className="px-8 pb-8">
             <div className="prose prose-lg max-w-none">
               {article.content.split('\n\n').map((paragraph, index) => (
-                <p key={index} className="mb-6 text-gray-800 leading-relaxed">
+                <p key={index} className="mb-6 text-gray-800 dark:text-gray-200 leading-relaxed">
                   {paragraph}
                 </p>
               ))}
             </div>
+            
+            {/* Article Ad Banner */}
+            <div className="my-8">
+              <AdBanner position="article" />
+            </div>
           </div>
         </article>
+
+        {/* Comment Section */}
+        <CommentSection articleId={article.id} />
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
           <section className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Artikel Terkait</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Artikel Terkait</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedArticles.map((relatedArticle) => (
                 <ArticleCard key={relatedArticle.id} article={relatedArticle} />

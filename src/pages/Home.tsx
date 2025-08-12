@@ -1,6 +1,8 @@
 import React from 'react';
 import HeroSlider from '../components/HeroSlider';
 import ArticleCard from '../components/ArticleCard';
+import TrendingSidebar from '../components/TrendingSidebar';
+import AdBanner from '../components/AdBanner';
 import { articles } from '../data/mockData';
 import { TrendingUp, Clock } from 'lucide-react';
 
@@ -38,11 +40,17 @@ const Home = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
+            {/* Sidebar Ad */}
+            <AdBanner position="sidebar" className="mb-8" />
+            
+            {/* Trending Sidebar */}
+            <TrendingSidebar />
+            
             {/* Popular News */}
-            <section className="bg-white rounded-lg shadow-md p-6">
+            <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-8">
               <div className="flex items-center mb-6">
                 <TrendingUp className="h-6 w-6 text-red-500 mr-2" />
-                <h2 className="text-xl font-bold text-gray-900">Berita Populer</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white">Berita Populer</h2>
               </div>
               <div className="space-y-4">
                 {popularArticles.map((article, index) => (
@@ -57,9 +65,9 @@ const Home = () => {
             </section>
 
             {/* Advertisement Space */}
-            <section className="bg-gray-200 rounded-lg p-8 text-center mt-8">
-              <p className="text-gray-600">Ruang Iklan</p>
-              <p className="text-sm text-gray-500 mt-2">300 x 250</p>
+            <section className="bg-gray-200 dark:bg-gray-700 rounded-lg p-8 text-center mt-8">
+              <p className="text-gray-600 dark:text-gray-300">Ruang Iklan</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">300 x 250</p>
             </section>
           </div>
         </div>

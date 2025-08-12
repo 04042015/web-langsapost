@@ -32,3 +32,42 @@ export interface NewsTickerItem {
   text: string;
   link?: string;
 }
+
+export interface Infographic {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  category: string;
+  publishDate: string;
+}
+
+export interface Video {
+  id: string;
+  title: string;
+  thumbnail: string;
+  videoUrl: string;
+  duration: string;
+  description: string;
+  category: string;
+  publishDate: string;
+  views: number;
+}
+
+export interface Comment {
+  id: string;
+  articleId: string;
+  name: string;
+  email: string;
+  content: string;
+  publishDate: string;
+  replies?: Comment[];
+}
+
+export interface Advertisement {
+  id: string;
+  title: string;
+  image: string;
+  link: string;
+  position: 'header' | 'sidebar' | 'article';
+}

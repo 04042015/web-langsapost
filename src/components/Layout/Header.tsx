@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { categories } from '../../data/mockData';
+import DarkModeToggle from '../DarkModeToggle';
+import AdBanner from '../AdBanner';
 
 const NewsTickerComponent = () => {
   const tickerItems = [
@@ -30,6 +32,11 @@ const Header = () => {
       {/* News Ticker */}
       <NewsTickerComponent />
       
+      {/* Header Ad Banner */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <AdBanner position="header" />
+      </div>
+      
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -50,25 +57,40 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Admin Link */}
-          <Link
-            to="/admin"
-            className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors font-medium"
-          >
-            Admin
-          </Link>
+          {/* Right Side Actions */}
+          <div className="flex items-center space-x-4">
+            <DarkModeToggle />
+            <Link
+              to="/admin"
+              className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors font-medium"
+            >
+              Admin
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white border-t border-gray-200">
+      <nav className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex space-x-8 overflow-x-auto scrollbar-hide py-4">
+            <Link
+              to="/infografik"
+              className="whitespace-nowrap text-gray-700 dark:text-gray-300 hover:text-red-500 font-medium transition-colors"
+            >
+              Infografik
+            </Link>
+            <Link
+              to="/video"
+              className="whitespace-nowrap text-gray-700 dark:text-gray-300 hover:text-red-500 font-medium transition-colors"
+            >
+              Video
+            </Link>
             {categories.map((category) => (
               <Link
                 key={category.id}
                 to={`/kategori/${category.slug}`}
-                className="whitespace-nowrap text-gray-700 hover:text-red-500 font-medium transition-colors"
+                className="whitespace-nowrap text-gray-700 dark:text-gray-300 hover:text-red-500 font-medium transition-colors"
               >
                 {category.name}
               </Link>

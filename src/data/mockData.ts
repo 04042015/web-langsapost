@@ -1,4 +1,5 @@
 import { Article, Category, User, NewsTickerItem } from '../types';
+import { Infographic, Video, Comment, Advertisement } from '../types';
 
 export const categories: Category[] = [
   { id: '1', name: 'Politik', slug: 'politik', description: 'Berita politik terkini' },
@@ -141,5 +142,138 @@ export const users: User[] = [
     email: 'editor@langsapost.com',
     role: 'editor',
     password: 'editor123' // In real app, this would be hashed
+  }
+];
+
+export const infographics: Infographic[] = [
+  {
+    id: '1',
+    title: 'Statistik Pertumbuhan Ekonomi Indonesia 2024',
+    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Infografik mengenai pertumbuhan ekonomi Indonesia sepanjang tahun 2024',
+    category: 'Ekonomi',
+    publishDate: '2025-01-15T10:00:00Z'
+  },
+  {
+    id: '2',
+    title: 'Peta Sebaran COVID-19 di Aceh',
+    image: 'https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Visualisasi data sebaran kasus COVID-19 di seluruh wilayah Aceh',
+    category: 'Kesehatan',
+    publishDate: '2025-01-14T15:30:00Z'
+  },
+  {
+    id: '3',
+    title: 'Timeline Pembangunan Smart City Langsa',
+    image: 'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Kronologi pembangunan infrastruktur smart city di Kota Langsa',
+    category: 'Langsa',
+    publishDate: '2025-01-13T09:15:00Z'
+  },
+  {
+    id: '4',
+    title: 'Perbandingan Teknologi 5G vs 4G',
+    image: 'https://images.pexels.com/photos/8376277/pexels-photo-8376277.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Infografik perbandingan kecepatan dan fitur teknologi 5G dengan 4G',
+    category: 'Teknologi',
+    publishDate: '2025-01-12T14:20:00Z'
+  }
+];
+
+export const videos: Video[] = [
+  {
+    id: '1',
+    title: 'Wawancara Eksklusif Walikota Langsa tentang Smart City',
+    thumbnail: 'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=800',
+    videoUrl: '#',
+    duration: '15:30',
+    description: 'Wawancara mendalam dengan Walikota Langsa mengenai program Smart City 2025',
+    category: 'Langsa',
+    publishDate: '2025-01-15T08:00:00Z',
+    views: 2500
+  },
+  {
+    id: '2',
+    title: 'Highlight Final Piala Asia 2025',
+    thumbnail: 'https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800',
+    videoUrl: '#',
+    duration: '8:45',
+    description: 'Cuplikan momen-momen terbaik dari final Piala Asia 2025',
+    category: 'Olahraga',
+    publishDate: '2025-01-14T20:30:00Z',
+    views: 5200
+  },
+  {
+    id: '3',
+    title: 'Demo Teknologi AI di Rumah Sakit',
+    thumbnail: 'https://images.pexels.com/photos/8376277/pexels-photo-8376277.jpeg?auto=compress&cs=tinysrgb&w=800',
+    videoUrl: '#',
+    duration: '12:15',
+    description: 'Demonstrasi penggunaan teknologi AI untuk diagnosis medis',
+    category: 'Teknologi',
+    publishDate: '2025-01-13T16:45:00Z',
+    views: 1800
+  },
+  {
+    id: '4',
+    title: 'Festival Budaya Aceh 2025 - Dokumenter',
+    thumbnail: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800',
+    videoUrl: '#',
+    duration: '25:00',
+    description: 'Dokumenter lengkap Festival Budaya Aceh 2025 di Langsa',
+    category: 'Langsa',
+    publishDate: '2025-01-12T10:00:00Z',
+    views: 3100
+  }
+];
+
+export const comments: Comment[] = [
+  {
+    id: '1',
+    articleId: '1',
+    name: 'Budi Santoso',
+    email: 'budi@email.com',
+    content: 'Program Smart City ini sangat bagus untuk kemajuan Kota Langsa. Semoga bisa terealisasi dengan baik.',
+    publishDate: '2025-01-15T12:30:00Z'
+  },
+  {
+    id: '2',
+    articleId: '1',
+    name: 'Sari Dewi',
+    email: 'sari@email.com',
+    content: 'Setuju dengan program ini. Tapi perlu transparansi dalam pelaksanaannya.',
+    publishDate: '2025-01-15T13:15:00Z'
+  },
+  {
+    id: '3',
+    articleId: '2',
+    name: 'Ahmad Rahman',
+    email: 'ahmad@email.com',
+    content: 'Teknologi AI memang sangat membantu dalam dunia medis. Semoga bisa diimplementasikan di seluruh Indonesia.',
+    publishDate: '2025-01-15T09:45:00Z'
+  }
+];
+
+export const advertisements: Advertisement[] = [
+  {
+    id: '1',
+    title: 'Header Banner Ad',
+    image: 'https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=800',
+    link: '#',
+    position: 'header'
+  },
+  {
+    id: '2',
+    title: 'Sidebar Ad 1',
+    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400',
+    link: '#',
+    position: 'sidebar'
+  },
+  {
+    id: '3',
+    title: 'Article Banner Ad',
+    image: 'https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg?auto=compress&cs=tinysrgb&w=800',
+    link: '#',
+    position: 'article'
   }
 ];
